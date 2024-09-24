@@ -13,21 +13,11 @@ public class MessagingWithSpring {
 
     public static final String topicExchangeName = "spring-boot-exchange";
 
-    static final String queueName = "spring-boot";
+    public static final String queueName = "spring-boot";
 
-    // Minha queue padrão
     @Bean
     Queue queue() {
         return new Queue(queueName, false);
-    }
-
-    // Usando Dead Letter Queue
-    @Bean
-    Queue myQueue(){
-        return QueueBuilder.durable("myQueue")
-                .withArgument("x-dead-letter-exchange", "exchange-dead-letter")
-                .withArgument("x-dead-letter-routing-key", "queue-dead-letter")
-                .build();
     }
 
     @Bean
