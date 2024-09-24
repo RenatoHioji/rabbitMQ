@@ -1,0 +1,3 @@
+rabbitmq-plugins enable rabbitmq_shovel
+rabbitmq-plugins enable rabbitmq_shovel_management
+rabbitmq-plugins enable rabbitmq_management
